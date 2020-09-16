@@ -14,13 +14,31 @@ import static org.apache.commons.lang3.RandomStringUtils.random;
 
 public class TestHelper {
 
+    static String[] myString = new String[]{"Create smth", "Delete smth", "Update smth", "Fix smth", "\n" +
+            "cat in a poke"};
+    int n = (int) Math.floor(Math.random() * myString.length);
 
     public static String getRandomEightDigits() {
         return random(8, false, true);
     }
 
     public static String getRandomLetters(int amount) {
-        return random(amount, true, false);
+        int n = (int) Math.floor(Math.random() * myString.length);
+        return myString[n];
+    }
+
+    static String[] names = new String[]{"Александр", "Алексей", "Анатолий", "Андрей", "Артём", "Борис", "Вадим", "Валентин", "Валерий", "Василий", "Виктор", "Виталий", "Владимир", "Владислав", "Вячеслав", "Георгий", "Глеб", "Григорий", "Даниил", "Денис", "Дмитрий", "Евгений", "Илья",  "Михаил", "Никита"};
+
+    public static String getRandomName() {
+        int n = (int) Math.floor(Math.random() * names.length);
+        return names[n];
+    }
+
+    static String[] lastnames = new String[]{"Иванов", "Петров", "Савченко", "Лапенко", "Кротов", "Кузнецов", "Смирнов", "Борисов", "Попов", "Лебедев", "Федоров", "Морозов", "Новиков", "Трубецкой", "Чернов", "Глухой"};
+
+    public static String getRandomLName() {
+        int n = (int) Math.floor(Math.random() * lastnames.length);
+        return lastnames[n];
     }
 
     public static Grade getRandomGrade() {

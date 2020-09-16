@@ -34,10 +34,7 @@ public class EmployeeService {
                 employeeRepositoryCustom.find(findEmployeeDTO.getCriteria(), findEmployeeDTO.getSort()));
     }
 
-    public List<EmployeeDTO> findAll() {
-        return employeeMapper.employeeToDto(
-                employeeRepository.findAll());
-    }
+    public List<EmployeeDTO> findAll() { return employeeMapper.employeeToDto(employeeRepository.findAll());}
 
     public void deleteById(BigInteger id) {
         employeeRepository.deleteById(id);

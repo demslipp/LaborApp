@@ -54,8 +54,8 @@ public class TestDataHelper {
             salary = TestHelper.getRandomInt(500, 1000);
         }
         return Employee.builder()
-                .firstName(TestHelper.getRandomLetters(10))
-                .lastName(TestHelper.getRandomLetters(12))
+                .firstName(TestHelper.getRandomName())
+                .lastName(TestHelper.getRandomLName())
                 .passport(TestHelper.getRandomEightDigits())
                 .grade(grade)
                 .salaryPerHour(salary)
@@ -74,7 +74,7 @@ public class TestDataHelper {
                 .updated(now)
                 .priority(TestHelper.getRandomPriority())
                 .taskCost(TestHelper.getRandomInt(100, 100000))
-                .doneInPercents(TestHelper.getRandomInt(0, 60))
+                .doneInPercents(TestHelper.getRandomInt(0, 0))
                 .build();
     }
 }

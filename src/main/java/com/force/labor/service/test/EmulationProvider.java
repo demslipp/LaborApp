@@ -19,7 +19,7 @@ public class EmulationProvider {
     private final TaskRepository taskRepository;
     private final TestDataHelper testDataHelper;
 
-//    @Scheduled(fixedDelay = 1)
+    @Scheduled(fixedDelay = 1)
     @Transactional
     public void closeTaskJob() {
         taskRepository.findAll().stream()
@@ -38,7 +38,7 @@ public class EmulationProvider {
     }
 
 
-//    @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelay = 10000)
     @Transactional
     public void emulateWorkJob() {
         log.warn("_____________________________________________________________");
@@ -53,6 +53,7 @@ public class EmulationProvider {
                         }
                     }
                     task.setDoneInPercents(task.getDoneInPercents() + TestHelper.getRandomInt(0, 15));
+                    if (task.getDoneInPercents()>100) {task.setDoneInPercents(100);}
                     task.setUpdated(LocalDateTime.now());
                 });
         log.warn("Emulation job finished ... ");
